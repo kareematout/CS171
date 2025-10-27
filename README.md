@@ -59,6 +59,7 @@ Facial expressions convey non-verbal signals commonly grouped into seven basic e
 
 Data Access Statement:
 This repository does not include data files. Expected layout after prep:
+    ```text
     data/
       fer2013/
         train/
@@ -68,7 +69,8 @@ This repository does not include data files. Expected layout after prep:
         train/
         val/
         test/
-
+    ```
+    
 ---
 
 ## Model Plans (two parts; shared architecture)
