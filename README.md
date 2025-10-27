@@ -1,4 +1,3 @@
-# CS171
 # Facial Emotion Recognition (FER) with a Shared CNN
 
 ## Authors
@@ -71,3 +70,49 @@ This repository does not include data files. Expected layout after prep:
         test/
 
 ---
+
+## Model Plans (two parts; shared architecture)
+
+### Kareem Atout — Model Plan for Dataset-A
+- Architecture: 4 convolutional blocks (Conv 3×3 → BatchNorm → ReLU → MaxPool) ×4 → GlobalAveragePool → Dropout → Linear(7).
+- Training: Adam optimizer, learning-rate, early stopping on validation macro-F1; class weighting or focal loss if needed.
+- Experiment A: Train and evaluate on Dataset-A; save best checkpoint and metrics.
+
+### Muhammad Kamran Khan — Model Plan for Dataset-B
+- Architecture: Identical to Dataset-A mdel plan.
+- Training: Same recipe; small hyperparameter sweep (learning rate, dropout) if dataset size differs.
+- Experiment B: Train and evaluate on Dataset-B; save best checkpoint and metrics.
+
+---
+
+## Analysis & Visualization (shared)
+- Confusion matrices per dataset; per-class precision/recall; macro/micro-F1.
+- Robustness curves: metric deltas under blur/occlusion/low-light perturbations.
+- Plotting and visualizting: show and plot results including accuracy and losses
+- Error analysis: gallery of frequent confusions (e.g., fear ↔ surprise).
+
+---
+
+## Project Timeline
+- Week 1:
+  Finalize topic/scope; create repo; install environment; download datasets; complete both pre-processing notebooks.
+- Week 2:
+  Implement shared CNN; run Exp-A and Exp-B; record baseline metrics.
+- Week 3:
+  Hyperparameter tuning; robustness experiments; saliency; draft Analysis notebook.
+- Week 4:
+  Finalize Analysis notebook; polish figures; prepare slides.
+- Presentation:
+  8 minutes total (~4 minutes per person) during Week 16.
+- Final Components Due:
+  Per syllabus (ensure GitHub quality, reproducibility, and Model Card are complete).
+
+---
+
+## Reproducibility
+
+Environment:
+Python 3.10+, PyTorch, torchvision, numpy, pandas, scikit-learn, matplotlib.
+
+Determinism:
+Set seeds for random, numpy, and torch.
